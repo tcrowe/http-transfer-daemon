@@ -1,0 +1,7 @@
+node_modules
+.tmp
+tmp
+.DS_Store
+backup
+Thumbs.db
+.eslintcache

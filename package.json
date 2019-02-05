@@ -1,0 +1,53 @@
+{
+  "name": "http-transfer-daemon",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Tony Crowe <npm@tonycrowe.com> (https://github.com/tcrowe)",
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/tcrowe/http-transfer-daemon#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tcrowe/http-transfer-daemon.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/tcrowe/http-transfer-daemon/issues"
+  },
+  "main": "dist/server.js",
+  "bin": {
+    "http-transfer-daemon": "dist/server.js"
+  },
+  "dependencies": {
+    "busboy": "^0.3.0",
+    "getopts": "^2.2.3",
+    "lodash": "^4.17.11",
+    "make-dir": "^1.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "eslint": "^5.13.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "mocha": "^6.0.0-1",
+    "npm-run-all": "^4.1.5",
+    "opti-node-watch": "^0.2.1",
+    "prettier": "^1.16.4",
+    "should": "^13.2.3",
+    "superagent": "^4.1.0"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "dev-babel": "opti-node-watch -w src --exec 'babel -d dist src/**/*.js'",
+    "dev-eslint": "opti-node-watch -w src -w test --exec 'eslint --cache --fix --format unix src test'",
+    "dev-mocha": "opti-node-watch -w src -w test --exec 'mocha'",
+    "xdev-app": "sleep 1 && opti-node-watch -w src --script dist/server.js",
+    "dev": "run-p dev-*",
+    "test": "mocha",
+    "prd-babel": "babel -d dist src/**/*.js",
+    "prd-eslint": "eslint --format unix src",
+    "prd": "run-s clean prd-* test"
+  }
+}
