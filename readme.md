@@ -47,29 +47,45 @@ superagent
   });
 ```
 
-## All options
+## CLI options
+
++ [protocol](#protocol) `--protocol http` http, https, http2
++ [port](#port) `--port 9883`
++ [host](#host) `--host 127.0.0.1` Use 0.0.0.0 for all interfaces
++ [silent](#silent) `--silent` Don't log anything
++ [key](#key) `--key /path/to/key.pem` SSL key
++ [cert](#cert) `--cert /path/to/cert.pem` SSL cert
++ [allowed-method](#allowed-method) `--allowed-method PUT`
++ [token](#token) `--token=4nV1dXzdU6HVDuVc` Basic security function
++ [verifyfn](#verifyfn) `--verifyfn /path/to/verify-function.js` Advanced security function
 
 ### protocol
 
-+ http
-+ https
-+ http2
++ `http`
++ `https`
++ `http2`
 
-default: http
+default: `http`
+
+[HTTPS and HTTP2 need testing.](https://github.com/tcrowe/http-transfer-daemon/issues)
 
 ### port
 
 default: randomized int 2000-65000
 
+I know using a randomized port is not really useful. It's likely that you will need to supply one yourself.
+
 ### host
 
-default: 127.0.0.1
+default: `127.0.0.1`
+
+Use `0.0.0.0` for all interfaces
 
 ### silent
 
-Log any information?
+⚠️ If silent it wont even log error messages.
 
-default: false
+default: `false`
 
 `--silent`
 
@@ -93,7 +109,7 @@ SSL certificate
 
 ### token
 
-Optionally check a header token on request.
+Optionally check a header token on request as a basic security precaution.
 
 `--token=4nV1dXzdU6HVDuVc`
 
