@@ -1,7 +1,7 @@
 
 # http-transfer-daemon
 
-It's a quick way to get a file transfer daemon up.
+It's a quick way to get a file transfer daemon up. You get to decide where the file goes.
 
 ## Load the daemon
 
@@ -17,6 +17,10 @@ http-transfer-daemon \
 *⚠️ These options have no security. See options below for security options.*
 
 ## Upload a file
+
+There's a form field called `destPath` for destination path. It's an absolute path where the file being uploaded will end up.
+
+One file is attached per request.
 
 `npm install superagent`
 
