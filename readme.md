@@ -23,7 +23,7 @@ http-transfer-daemon \
   --host 127.0.0.1
 ```
 
-*⚠️ These options have no security. See options below for security options.*
+*⚠️ These options have no security. Read below for security options.*
 
 ## Upload a file
 
