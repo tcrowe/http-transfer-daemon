@@ -3,6 +3,15 @@
 
 It's a quick way to get a file transfer daemon up. You get to decide where the file goes.
 
+Why use it?
+
++ You don't want to configure FTP, SSH, or some other transfer server.
++ You prefer HTTP, HTTPS, or HTTP2 to transfer files from one place to another.
++ Upload to a VM in development faster than other methods.
++ A quick way to patch or hack some files on another machine.
++ There's a value in parallelization.
++ You want to be able to see how it works in 10min with less than 300 sloc.
+
 ## Load the daemon
 
 `npm install -g http-transfer-daemon`
