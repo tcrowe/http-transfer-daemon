@@ -33,22 +33,20 @@ var randomPort = function randomPort() {
   return random(2000, 65000);
 };
 
-var _getopts = getopts(process.argv),
-    _getopts$protocol = _getopts.protocol,
-    protocol = _getopts$protocol === void 0 ? "http" : _getopts$protocol,
-    _getopts$port = _getopts.port,
-    port = _getopts$port === void 0 ? randomPort() : _getopts$port,
-    _getopts$host = _getopts.host,
-    host = _getopts$host === void 0 ? "127.0.0.1" : _getopts$host,
-    _getopts$silent = _getopts.silent,
-    silent = _getopts$silent === void 0 ? false : _getopts$silent,
-    key = _getopts.key,
-    cert = _getopts.cert,
-    _getopts$allowedMetho = _getopts.allowedMethod,
-    allowedMethod = _getopts$allowedMetho === void 0 ? "PUT" : _getopts$allowedMetho,
-    token = _getopts.token,
-    verifyfn = _getopts.verifyfn;
-
+var opts = getopts(process.argv);
+var _opts$protocol = opts.protocol,
+    protocol = _opts$protocol === void 0 ? "http" : _opts$protocol,
+    _opts$port = opts.port,
+    port = _opts$port === void 0 ? randomPort() : _opts$port,
+    _opts$host = opts.host,
+    host = _opts$host === void 0 ? "127.0.0.1" : _opts$host,
+    _opts$silent = opts.silent,
+    silent = _opts$silent === void 0 ? false : _opts$silent,
+    key = opts.key,
+    cert = opts.cert,
+    token = opts.token,
+    verifyfn = opts.verifyfn;
+var allowedMethod = opts["allowed-method"] || opts.allowedMethod || "PUT";
 var server;
 var jsonHeader = {
   "content-type": "application/json"

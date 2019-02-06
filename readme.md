@@ -114,7 +114,7 @@ SSL certificate
 
 `--cert /home/buster/cert.pem`
 
-### allowedMethod
+### allowed-method
 
  default: PUT
 

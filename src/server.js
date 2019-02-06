@@ -19,6 +19,7 @@ const get = require("lodash/get");
 const busboy = require("busboy");
 const makeDir = require("make-dir");
 const randomPort = () => random(2000, 65000);
+const opts = getopts(process.argv);
 const {
   protocol = "http",
   port = randomPort(),
@@ -26,10 +27,10 @@ const {
   silent = false,
   key,
   cert,
-  allowedMethod = "PUT",
   token,
   verifyfn
-} = getopts(process.argv);
+} = opts;
+const allowedMethod = opts["allowed-method"] || opts.allowedMethod || "PUT";
 let server;
 const jsonHeader = { "content-type": "application/json" };
 
